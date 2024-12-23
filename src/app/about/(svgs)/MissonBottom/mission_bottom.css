@@ -1,0 +1,42 @@
+.timeline_path {
+  animation: fill 5s forwards linear;
+  stroke-dasharray: 1423;
+}
+@keyframes fill {
+  from {
+    stroke-dashoffset: 1423; /* Start with the path fully hidden */
+  }
+  to {
+    stroke-dashoffset: 0; /* End with the path fully visible */
+  }
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.first_block {
+  animation: fadeInFromBottom 1s forwards ease;
+  animation-delay: 0.8s;
+  /* transition: all 1s ease; */
+  opacity: 0;
+}
+.second_block {
+  animation: fadeInFromBottom 1s forwards linear;
+  /* transition: all 1s ease; */
+  animation-delay: 2s;
+  opacity: 0;
+}
+.third_block {
+  animation: fadeInFromBottom 1s forwards linear;
+  /* transition: all 1s ease; */
+  animation-delay: 3.5s;
+  opacity: 0;
+}

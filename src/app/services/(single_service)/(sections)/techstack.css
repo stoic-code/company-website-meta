@@ -1,0 +1,16 @@
+#scroll-container {
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+#scroller__inner {
+  display: flex;
+  animation: scroll 120s infinite linear;
+  width: max-content;
+  transition: all 0.5s linear;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50%));
+  }
+}

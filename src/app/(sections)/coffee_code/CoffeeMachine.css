@@ -1,0 +1,109 @@
+:root {
+  --container-width: 300px;
+  --container-height: 280px;
+  --coffee-header-height: 80px;
+  --coffee-medium-height: 160px;
+  --coffee-medium-liquid-height: 63px;
+}
+
+.container {
+  width: var(--container-width);
+  height: var(--container-height);
+  position: absolute;
+  top: calc(50% - var(--container-height) / 2);
+  left: calc(50% - var(--container-width) / 2);
+}
+
+.coffee-header {
+  width: 100%;
+  height: var(--coffee-header-height);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ddcfcc;
+  border-radius: 10px;
+}
+
+/* Define reusable mixin for buttons */
+@mixin coffee-button($left) {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 25px;
+  left: $left;
+  background-color: #282323;
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    bottom: -8px;
+    left: calc(50% - 4px);
+    background-color: #615e5e;
+  }
+}
+
+.coffee-header__buttons {
+  @include coffee-button(15px);
+}
+
+.coffee-header__button-two {
+  @include coffee-button(50px);
+}
+
+.coffee-header__display {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  border-radius: 50%;
+  background-color: #9acfc5;
+  border: 5px solid #43beae;
+  box-sizing: border-box;
+}
+
+.coffee-medium {
+  width: 90%;
+  height: var(--coffee-medium-height);
+  position: absolute;
+  top: var(--coffee-header-height);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #bcb0af;
+}
+
+.coffee-medium:before {
+  content: "";
+  width: 90%;
+  height: 100px;
+  background-color: #776f6e;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0 0;
+}
+
+.coffee-footer {
+  width: 95%;
+  height: 15px;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #41bdad;
+  border-radius: 10px;
+}
+
+.coffee-footer::after {
+  content: "";
+  width: 106%;
+  height: 26px;
+  position: absolute;
+  bottom: -25px;
+  left: -8px;
+  background-color: #000;
+}

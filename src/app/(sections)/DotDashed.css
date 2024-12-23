@@ -1,0 +1,14 @@
+.dashed_path {
+  stroke-dashoffset: 351;
+  stroke-dasharray: 351;
+  animation: dashAnimate 2s linear forwards;
+}
+
+@keyframes dashAnimate {
+  from {
+    stroke-dashoffset: 351;
+  }
+  to {
+    stroke-dashoffset: 90;
+  }
+}

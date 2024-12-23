@@ -1,0 +1,14 @@
+/* styles.css or tailwind.css */
+.slide-enter-right {
+  transform: translateX(100%);
+  animation: slide-enter-right-animation 0.5s ease-out forwards;
+}
+
+@keyframes slide-enter-right-animation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
